@@ -14,11 +14,6 @@ resource "aws_instance" "splunk_SH" {
   # command = "/bin/bash /tmp/script.sh" #executes script on destination
 }
 
-  
-  tags = {
-    Name = "splunk-server"
-  }
-
 resource "aws_instance" "splunk_IDX1" {
   ami           = "ami-0b5cb59327b8d7e1f" # us-west-2 AMI for Splunk
   instance_type = "t3.micro" # Update to t3.large in prod
