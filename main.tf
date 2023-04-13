@@ -58,28 +58,28 @@ resource "aws_security_group" "splunk_server" {
     from_port   = 22 # ssh port
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["24.247.202.81/32"]
+    cidr_blocks = ["<ip-address>"]
   }
 
   ingress {
     from_port   = 8000 # Web UI port
     to_port     = 8000
     protocol    = "tcp"
-    cidr_blocks = ["24.247.202.81/32"]
+    cidr_blocks = ["<ip-address>"]
   }
 
   ingress {
     from_port   = 8088 # HEC port
     to_port     = 8088
     protocol    = "tcp"
-    cidr_blocks = ["24.247.202.81/32"]
+    cidr_blocks = ["<ip-address>"]
   }
 
   ingress {
     from_port   = 9997 # Forwarder port
     to_port     = 9997
     protocol    = "tcp"
-    cidr_blocks = ["24.247.202.81/32"]
+    cidr_blocks = ["<ip-address>"]
   }
   
   tags = {
