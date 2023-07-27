@@ -7,12 +7,6 @@ resource "aws_instance" "splunk_SH" {
   associate_public_ip_address = true
   vpc_security_group_ids = ["${aws_security_group.splunk_server.id}"]
   subnet_id              = "${aws_subnet.splunk_server.id}"
- 
-  #provisioner "local-exec" {
-  # source="path\to\script\script.sh" #install app
-  # destination="/tmp/script.sh" #AMI destination for install
-  # command = "/bin/bash /tmp/script.sh" #executes script on destination
-}
 
 resource "aws_instance" "splunk_IDX1" {
   ami           = "ami-0b5cb59327b8d7e1f" # us-west-2 AMI for Splunk
